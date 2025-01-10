@@ -1,14 +1,11 @@
 # Magisk Trust User Certs
 This module makes all installed user certificates part of the system certificate store, so that they will automatically be used when building the trust chain. This module makes it unnecessary to add the network_security_config property to an application's manifest.
 
-## Accompanying blogpost
-[Intercepting HTTPS Traffic from Apps on Android 7+ using Magisk & Burp](https://blog.nviso.be/2017/12/22/intercepting-https-traffic-from-apps-on-android-7-using-magisk-burp/)
-
 ### Installation
-1. Install [Magisk](https://forum.xda-developers.com/apps/magisk/official-magisk-v7-universal-systemless-t3473445)
-2. Zip files `zip -r AlwaysTrustUserCerts.zip ./*` or download zip from releases
-3. Install in Magisk
-4. Install client certificates through [normal flow](https://support.portswigger.net/customer/portal/articles/1841102-installing-burp-s-ca-certificate-in-an-android-device)
+1. Install [Magisk](https://github.com/topjohnwu/Magisk)
+2. Zip files `pushd AlwaysTrustUserCerts; zip -r AlwaysTrustUserCerts.zip ./*; popd`
+3. Install in Magisk (or flash through TWRP)
+4. Install client certificates through settings->security
 5. Restart your device. Certificate copying happens during boot.
 6. The installed user certificates can now be found in the system store.
 
@@ -19,6 +16,9 @@ Install the certificate as a user certificate and restart the device.
 Remove the certificate from the user store through the settings, and restart the device.
 
 ### Changelog
+
+#### v0.5.0
+* Properly support Magisk v20.4+ (tested v28.1)
 
 #### v0.4.1
 * Supports Android 10

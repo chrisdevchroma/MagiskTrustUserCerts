@@ -1,0 +1,6 @@
+id=trustusercerts
+name=Always Trust User Certificates
+version=v0.5.0
+versionCode=005000
+author=chrisdevchroma
+description=This module adds all installed user certificates to the system trust store.
